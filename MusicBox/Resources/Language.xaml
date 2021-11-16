@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="Start">Start</system:String>
+    <system:String x:Key="Settings">Settings</system:String>
+    <system:String x:Key="NeedActivate">You must activate the application</system:String>
+    <system:String x:Key="ActivationKey">Activation Key</system:String>
+    <system:String x:Key="Activate">Activate</system:String>
+    <system:String x:Key="Waiting">Waiting...</system:String>
+    <system:String x:Key="CheckActivation">Check activation</system:String>
+    <system:String x:Key="UseTrialVersion">Use Trial version</system:String>
+    <system:String x:Key="CameraSettings">Camera settings</system:String>
+    <system:String x:Key="LicenseSettings">License settings</system:String>
+    <system:String x:Key="MusicSettings">Music settings</system:String>
+    <system:String x:Key="UseUnregisteredVersion">You are using an unregistered version of the program. If you want to purchase our software, write to us info@freezemytime.com. If you have an activation key, enter it in the box below. Or use a limited version of the program. Internet connection is required throw activation.</system:String>
+    <system:String x:Key="ErrorSettings">Need to set all settings</system:String>
+    <system:String x:Key="WrongKey">Wrong key</system:String>
+    <system:String x:Key="Language">Language</system:String>
+</ResourceDictionary>

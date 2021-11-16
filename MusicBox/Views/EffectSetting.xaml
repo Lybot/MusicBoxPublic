@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="MusicBox.Views.EffectSetting"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MusicBox.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" d:DataContext="local:EffectSettingVm">
+    <Grid>
+        <!--<Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>-->
+        <StackPanel Orientation="{Binding Orientation}">
+            <ComboBox ItemsSource="{Binding EffectVariants}" SelectedItem="{Binding CurrentEffect}" Margin="10"/>
+            <StackPanel Orientation="{Binding OppositeOrientation}">
+                <TextBlock Text="{Binding FirstSettingDescription}" Margin="10" />
+                <TextBox Text="{Binding FirstSetting}" Margin="10" />
+            </StackPanel>
+            <StackPanel Orientation="{Binding OppositeOrientation}">
+                <TextBlock  Text="{Binding SecondSettingDescription}" Margin="10" />
+                <TextBox Text="{Binding SecondSetting}" Margin="10" />
+            </StackPanel>
+            <StackPanel Orientation="{Binding OppositeOrientation}">
+                <TextBlock Text="{Binding ThirdSettingDescription}" Margin="10" />
+                <TextBox Text="{Binding ThirdSetting}" Margin="10" />
+            </StackPanel>
+            <StackPanel Orientation="{Binding OppositeOrientation}">
+                <TextBlock Text="{Binding ForthSettingDescription}" Margin="10"/>
+                <TextBox Text="{Binding ForthSetting}" Margin="10" />
+            </StackPanel>
+        </StackPanel>
+        <!--<TextBlock Grid.Column="0" Grid.Row="1" Text="{Binding FirstSettingDescription}" Margin="10" />
+        <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding FirstSetting}" Margin="10" />
+        <TextBlock Grid.Column="0" Grid.Row="2" Text="{Binding SecondSettingDescription}" Margin="10" />
+        <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding SecondSetting}" Margin="10" />
+        <TextBlock Grid.Column="0" Grid.Row="3" Text="{Binding ThirdSettingDescription}" Margin="10" />
+        <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding ThirdSetting}" Margin="10" />
+        <TextBlock Grid.Column="0" Grid.Row="4" Text="{Binding ForthSettingDescription}" Margin="10"/>
+        <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding ForthSetting}" Margin="10" />-->
+    </Grid>
+</UserControl>

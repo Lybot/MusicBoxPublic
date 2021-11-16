@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="MusicBox.Views.MusicSettingsItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MusicBox.ViewModels"
+             mc:Ignorable="d" d:DesignHeight="50" d:DesignWidth="500">
+    <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition Width="25"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="0" Text="{Binding PublicNumber}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+            <StackPanel Grid.Column="1">
+                <Button Height="25" Command="{Binding UpNumber}">
+                    <Image Source="{Binding UpImage}"></Image>
+                </Button>
+                <Button Height="25" Command="{Binding DownNumber}">
+                    <Image Source="{Binding DownImage}"></Image>
+                </Button>
+            </StackPanel>
+            <TextBox IsReadOnly="True" Grid.Column="2" VerticalContentAlignment="Center" Margin="10,5,10,5" Text="{Binding PublicName}"></TextBox>
+            <Button Grid.Column="3" Height="40" Width="40" Command="{Binding PlayPause}" Margin="5">
+                <Image Source="{Binding PlayStopImage}"/>
+            </Button>
+            <Button Grid.Column="4" Content="Choose sound" Margin="5" Command="{Binding UpdatePath}"></Button>
+        </Grid>
+</UserControl>

@@ -1,0 +1,44 @@
+﻿<Window x:Class="MusicBox.Views.SettingsTab"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:models="clr-namespace:MusicBox.Models"
+        xmlns:vm="clr-namespace:MusicBox.ViewModels"
+        xmlns:views="clr-namespace:MusicBox.Views"
+        mc:Ignorable="d"
+        Title="{DynamicResource Settings}" WindowState="Maximized" FontSize="20">
+    <Window.Resources>
+        <models:TabSizeConverter x:Key="TabSizeConverter" />
+        <Style TargetType="{x:Type TabItem}">
+            <Setter Property="Width">
+                <Setter.Value>
+                    <MultiBinding Converter="{StaticResource TabSizeConverter}">
+                        <Binding RelativeSource="{RelativeSource Mode=FindAncestor,
+            AncestorType={x:Type TabControl}}" />
+                        <Binding RelativeSource="{RelativeSource Mode=FindAncestor,
+            AncestorType={x:Type TabControl}}" Path="ActualWidth" />
+                    </MultiBinding>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TabControl>
+            <TabItem Header="{DynamicResource CameraSettings}">
+                <views:CameraSettings/>
+            </TabItem>
+            <TabItem Header="{DynamicResource MusicSettings}">
+                <views:MusicSettings/>
+            </TabItem>
+            <TabItem Header="{DynamicResource LicenseSettings}">
+                <views:LicenseSettings/>
+            </TabItem>
+        </TabControl>
+        <Button Grid.Row="1" Width="200" Height="35" Content="{DynamicResource Start}" Command="{Binding Start}"/>
+    </Grid>
+</Window>
